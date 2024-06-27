@@ -1,0 +1,309 @@
+<nav class="navbar is-dark">
+  <div class="navbar-brand">
+    <router-link to="/" class="navbar-item"
+      ><strong>codecorp</strong></router-link
+    >
+
+    <a
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbar-menu"
+      @click="showMobileMenu = !showMobileMenu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div
+    class="navbar-menu"
+    id="navbar-menu"
+    v-bind:class="{ 'is-active': showMobileMenu }"
+  >
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <form method="get" action="/search">
+          <div class="field has-addons">
+            <div class="control">
+              <input
+                type="text"
+                class="input"
+                placeholder="What are you looking for?"
+                name="query"
+              />
+            </div>
+
+            <div class="control">
+              <button class="button is-success">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <router-link to="/summer" class="navbar-item">Summer</router-link>
+      <router-link to="/winter" class="navbar-item">Winter</router-link>
+
+      <div class="navbar-item">
+        <div class="buttons">
+          <template v-if="$store.state.isAuthenticated">
+            <router-link to="/my-account" class="button is-light"
+              >My account</router-link
+            >
+          </template>
+
+          <template v-else>
+            <router-link to="/log-in" class="button is-light"
+              >Log in</router-link
+            >
+          </template>
+
+          <router-link to="/cart" class="button is-success">
+            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+            <span>Cart ({{ cartTotalLength }})</span>
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-primary is-medium">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+            <span class="navbar-item">
+              <a class="button is-primary is-inverted">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Download</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        Title
+      </p>
+      <p class="subtitle">
+        Subtitle
+      </p>
+    </div>
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <nav class="tabs">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>Modifiers</a></li>
+          <li><a>Grid</a></li>
+          <li><a>Elements</a></li>
+          <li><a>Components</a></li>
+          <li><a>Layout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="blog-posts">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-10 is-offset-1">
+        <div class="columns featured-post is-multiline">
+          <div class="column is-12 post">
+            <article class="columns featured">
+              <div class="column is-7 post-img ">
+                <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
+              </div>
+              <div class="column is-5 featured-content va">
+                <div>
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Blog Posts Template</h1>
+                  <p class="post-excerpt">This template is based off of the official default blog template created by the fine folks over at <a href="https://ghost.io">Ghost</a>. If you are looking for a fully featured blog platform, I highly recommend checking them out!</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+
+              </div>
+            </article>
+          </div>
+        </div>
+        <hr>
+        <div class="columns is-multiline">
+          <div class="column post is-6">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">Category Name</h3>
+                <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                <br>
+                <a href="#" class="button is-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="column post is-6">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">Category Name</h3>
+                <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                <br>
+                <a href="#" class="button is-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="column post is-4">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">Category Name</h3>
+                <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                <br>
+                <a href="#" class="button is-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="column post is-4">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">Category Name</h3>
+                <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                <br>
+                <a href="#" class="button is-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="column post is-4">
+            <article class="columns is-multiline">
+              <div class="column is-12 post-img">
+                <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+              </div>
+              <div class="column is-12 featured-content ">
+                <h3 class="heading post-category">Category Name</h3>
+                <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                <br>
+                <a href="#" class="button is-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
